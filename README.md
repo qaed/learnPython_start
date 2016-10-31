@@ -139,27 +139,40 @@ txt.close()
 ```
 ### ex16 读写文件
 
-- close – 关闭文件。跟你编辑器的 文件->保存.. 一个意思。
+- close – 关闭文件。跟你编辑器的 `文件->保存..` 一个意思。
 - read – 读取文件内容。你可以把结果赋给一个变量。
 - readline – 读取文本文件中的一行。
 - truncate – 清空文件，请小心使用该命令。
 - write(stuff) – 将stuff写入文件。
 
+```python
+# 只有特别制定参数后，才可以进行写入操作
+target = open(filename,'w')
+# 清空文件
+target.truncate()
+# 最后需要关闭，类似文件->保存。。的操作
+target.close()
+```
 ### ex17 更多文件操作
 ```python
-
+from os.path import exists
+exists(filename)#判断文件是否存在
 ```
 ### ex18 命名、变量、代码、函数
 ```python
-
+def print_two(*args):
+    arg1, arg2 = args
+    print("arg1: %r, arg2: %r" % (arg1, arg2))
+def print_two_again(arg1, arg2):
+    print("arg1: %r, arg2: %r" % (arg1, arg2))
+    
+# 运行函数(run)’、‘调用函数(call)’、和 ‘使用函数(use)’是同一个意思
 ```
 ### ex19 函数和变量
-```python
 
-```
 ### ex20 函数和文件
 ```python
-
+file.seek() #移动文件读取指针到指定位置。
 ```
 ### ex21 函数可以返回东西
 
