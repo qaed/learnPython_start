@@ -110,12 +110,69 @@ xxx
 |\o|八进制数代表的字符 | 
 |\x|十六进制数代表的字符 | 
 |\000| 终止符，\000后的字符串全部忽略|
-### ex11
+### ex11 提问
+```python
+print("xxx",end="") # 输出不换行
+```
 
-### ex12
+### ex12 提示别人
+```python
+age = input("How old are you?")
+```
+### ex13 参数、解包、变量
+```python
+from sys import argv # 模组(modules)
+# 获取运行参数
+script, first, second, third = argv
+```
+### ex14 提示和传递
 
-### ex13
+### ex15 读取文件
+```python
+# 获取文件
+txt = open(filename)
+print("Here's your file %r:" % filename)
+# 输出文件内容
+print(txt.read())
+# 关闭，释放内存
+txt.close()
+```
+### ex16 读写文件
 
-### ex14
+- close – 关闭文件。跟你编辑器的 `文件->保存..` 一个意思。
+- read – 读取文件内容。你可以把结果赋给一个变量。
+- readline – 读取文本文件中的一行。
+- truncate – 清空文件，请小心使用该命令。
+- write(stuff) – 将stuff写入文件。
 
+```python
+# 只有特别制定参数后，才可以进行写入操作
+target = open(filename,'w')
+# 清空文件
+target.truncate()
+# 最后需要关闭，类似文件->保存。。的操作
+target.close()
+```
+### ex17 更多文件操作
+```python
+from os.path import exists
+exists(filename)#判断文件是否存在
+```
+### ex18 命名、变量、代码、函数
+```python
+def print_two(*args):
+    arg1, arg2 = args
+    print("arg1: %r, arg2: %r" % (arg1, arg2))
+def print_two_again(arg1, arg2):
+    print("arg1: %r, arg2: %r" % (arg1, arg2))
+    
+# 运行函数(run)’、‘调用函数(call)’、和 ‘使用函数(use)’是同一个意思
+```
+### ex19 函数和变量
+
+### ex20 函数和文件
+```python
+file.seek() #移动文件读取指针到指定位置。
+```
+### ex21 函数可以返回东西
 
